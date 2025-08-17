@@ -23,8 +23,6 @@ A simple frontend for an AgriTech website, featuring:
 - Include data visualization for crop analytics
 - Add blog/news section for latest agriTech trends
 
-## License
-MIT
 
----
 For suggestions or contributions, feel free to open an issue or pull request.
+
