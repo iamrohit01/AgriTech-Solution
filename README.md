@@ -1,4 +1,4 @@
-# AgriTech WebApp Frontend
+2# AgriTech WebApp Frontend
 
 A simple frontend for an AgriTech website, featuring:
 - Homepage with hero section
@@ -9,11 +9,6 @@ A simple frontend for an AgriTech website, featuring:
 ## How to Use
 1. Open `index.html` in your browser to view the site.
 2. Try the flashcards by clicking on them to flip and reveal answers.
-
-## Folder Structure
-- `index.html` — Main webpage
-- `style.css` — Styles for the site
-- `script.js` — JavaScript for interactivity
 
 ## Future Updates
 - Add more flashcards and categories (e.g., soil, irrigation, pests)
