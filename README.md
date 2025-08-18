@@ -1,6 +1,6 @@
 
 ## Future Updates
-- Add more flashcards and categories (e.g., soil, irrigation, pests)
+- Add more flashcards and categories
 - Integrate backend for dynamic content and user authentication
 - Add user dashboard for personalized recommendations
 - Implement responsive design for mobile devices
