@@ -6,10 +6,6 @@ A simple frontend for an AgriTech website, featuring:
 - Contact form
 - Advanced interactive flashcards for agricultural learning
 
-## How to Use
-1. Open `index.html` in your browser to view the site.
-2. Try the flashcards by clicking on them to flip and reveal answers.
-
 ## Future Updates
 - Add more flashcards and categories (e.g., soil, irrigation, pests)
 - Integrate backend for dynamic content and user authentication
