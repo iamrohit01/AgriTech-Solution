@@ -1,10 +1,3 @@
-2# AgriTech WebApp Frontend
-
-A simple frontend for an AgriTech website, featuring:
-- Homepage with hero section
-- Features list
-- Contact form
-- Advanced interactive flashcards for agricultural learning
 
 ## Future Updates
 - Add more flashcards and categories (e.g., soil, irrigation, pests)
