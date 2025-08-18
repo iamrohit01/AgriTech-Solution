@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTech WebApp</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgriTech Solution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>AgriTech Solutions</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section id="home" class="hero">
-        <h2>Empowering Farmers with Technology</h2>
-        <p>Modern solutions for sustainable agriculture.</p>
-    </section>
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Crop Monitoring</li>
-            <li>Weather Forecasting</li>
-            <li>Market Prices</li>
-        </ul>
-    </section>
+  <!-- Temporal scrubber -->
+  <div id="scrubber"></div>
 
-    <section id="flashcards">
-        <h2>AgriTech Flashcards</h2>
-        <div class="flashcards-container">
-            <div class="flashcard">
-                <div class="flashcard-front">What is precision agriculture?</div>
-                <div class="flashcard-back">Precision agriculture uses technology to optimize field-level management regarding crop farming.</div>
-            </div>
-            <div class="flashcard">
-                <div class="flashcard-front">Name a benefit of crop rotation.</div>
-                <div class="flashcard-back">Crop rotation improves soil health and reduces pest buildup.</div>
-            </div>
-            <div class="flashcard">
-                <div class="flashcard-front">What does IoT stand for?</div>
-                <div class="flashcard-back">Internet of Things</div>
-            </div>
-        </div>
-        <p>Click on a card to flip and reveal the answer!</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2025 AgriTech Solutions</p>
-    </footer>
-    <script src="script.js"></script>
+  <!-- Panorama ribbon -->
+  <section id="intro">
+    <h1>Grow Knowledge, Harvest Technology</h1>
+    <p>AgriTech Solution helps you master modern farming skills through immersive storytelling and real-time decision tools.</p>
+  </section>
+
+  <section id="sensors">
+    <h2 class="scene-title">Sensor Basics</h2>
+    <p class="scene-desc">Discover how low-cost soil moisture probes and canopy temperature sensors generate actionable insights without overwhelming your workflow.</p>
+  </section>
+
+  <section id="nutrients">
+    <h2 class="scene-title">Data-Informed Nutrient Management</h2>
+    <p class="scene-desc">Learn to interpret spectral vegetation indices so that fertiliser applications become both cost-effective and climate-smart.</p>
+  </section>
+
+  <section id="water">
+    <h2 class="scene-title">Sustainable Water Strategies</h2>
+    <p class="scene-desc">Explore precision irrigation triggers that respect every drop in an era of climatic uncertainty.</p>
+  </section>
+
+  <!-- Floating action -->
+  <div class="fab" aria-label="Open menu">+</div>
+  <div class="radial" aria-hidden="true">
+    <button class="btn-monitor">📈</button>
+    <button class="btn-workshop">🎓</button>
+    <button class="btn-ask">❓</button>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal" id="modal-monitor">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Monitor Your Fields</h3>
+      <p>Upload or draw field boundaries to generate live NDVI charts and drought risk alerts.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-workshop">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Join Next Workshop</h3>
+      <p>Register for interactive sessions led by agronomists and agri-tech innovators.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-ask">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Ask an Expert</h3>
+      <p>Post your question and receive evidence-based guidance within 24 hours.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
