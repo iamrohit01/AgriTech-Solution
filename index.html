@@ -10,61 +10,104 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Temporal scrubber -->
+  <!-- Scrubber -->
   <div id="scrubber"></div>
 
-  <!-- Panorama ribbon -->
+  <!-- Toast notification -->
+  <div id="toast"></div>
+  
+  <!-- Main intro -->
   <section id="intro">
     <h1>Grow Knowledge, Harvest Technology</h1>
-    <p>AgriTech Solution helps you master modern farming skills through immersive storytelling and real-time decision tools.</p>
+    <p>AgriTech Solution helps you master modern farming skills with immersive stories and field tools.</p>
+    <div class="weather-card" id="weather-card">
+      <div class="weather-refresh" onclick="weatherDemo()">
+        <span>Refresh</span><span>🔄</span>
+      </div>
+      <p class="weather-temp" id="weather-t">28°C</p>
+      <p class="weather-desc" id="weather-d">Partly Cloudy</p>
+      <p>Humidity <span id="weather-h">62%</span></p>
+    </div>
   </section>
 
   <section id="sensors">
     <h2 class="scene-title">Sensor Basics</h2>
-    <p class="scene-desc">Discover how low-cost soil moisture probes and canopy temperature sensors generate actionable insights without overwhelming your workflow.</p>
+    <div class="scene-desc">
+      <p>Discover how soil moisture probes and canopy sensors help automate decision-making. Try tweaking sensor accuracy!</p>
+      <div class="range-slider">
+        <span class="range-label">Sensor Sensitivity:</span>
+        <input type="range" min="1" max="100" value="50" id="sensor-slider">
+        <span class="slider-value" id="sensor-value">50</span>
+      </div>
+    </div>
   </section>
 
   <section id="nutrients">
-    <h2 class="scene-title">Data-Informed Nutrient Management</h2>
-    <p class="scene-desc">Learn to interpret spectral vegetation indices so that fertiliser applications become both cost-effective and climate-smart.</p>
+    <h2 class="scene-title">Nutrient Simulator</h2>
+    <div class="scene-desc">
+      <p>Simulate crop growth with smarter fertilizer usage.</p>
+      <button onclick="simulateGrowth()" class="btn">Simulate Growth</button>
+      <p id="growth-result"></p>
+    </div>
   </section>
 
   <section id="water">
-    <h2 class="scene-title">Sustainable Water Strategies</h2>
-    <p class="scene-desc">Explore precision irrigation triggers that respect every drop in an era of climatic uncertainty.</p>
+    <h2 class="scene-title">Field Planning</h2>
+    <div class="scene-desc">
+      <p>Draw your farm boundary below. This helps AgriTech personalize your drought warnings.</p>
+      <canvas id="fieldcanvas" width="360" height="190"></canvas>
+      <button onclick="clearCanvas()" class="btn-clear">Clear Map</button>
+    </div>
   </section>
 
   <!-- Floating action -->
-  <div class="fab" aria-label="Open menu">+</div>
+  <div class="fab" aria-label="Open menu" title="Open quick actions">+</div>
   <div class="radial" aria-hidden="true">
-    <button class="btn-monitor">📈</button>
-    <button class="btn-workshop">🎓</button>
-    <button class="btn-ask">❓</button>
+    <button class="btn-monitor" title="Monitor Fields">📈</button>
+    <button class="btn-workshop" title="Register Workshop">🎓</button>
+    <button class="btn-ask" title="Ask Expert">❓</button>
   </div>
 
-  <!-- Modals -->
+  <!-- Modal Monitor -->
   <div class="modal" id="modal-monitor">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3>Monitor Your Fields</h3>
-      <p>Upload or draw field boundaries to generate live NDVI charts and drought risk alerts.</p>
+      <p>Upload geoJSON or draw fields to see NDVI and water stress charts (demo).</p>
+      <input type="file" id="file-upload" accept=".geojson">
+      <button onclick="showToast('Live analysis coming soon!')">Analyze</button>
     </div>
   </div>
-
+  
+  <!-- Modal Workshop -->
   <div class="modal" id="modal-workshop">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3>Join Next Workshop</h3>
-      <p>Register for interactive sessions led by agronomists and agri-tech innovators.</p>
+      <h3>Register: Upcoming Workshop</h3>
+      <form id="workshop-form">
+        <input type="text" placeholder="Name" required><br><br>
+        <input type="email" placeholder="Email" required><br><br>
+        <button type="submit" class="btn">Register</button>
+      </form>
     </div>
   </div>
 
+  <!-- Modal Ask -->
   <div class="modal" id="modal-ask">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3>Ask an Expert</h3>
-      <p>Post your question and receive evidence-based guidance within 24 hours.</p>
+      <h3>Ask An Expert</h3>
+      <p>Post a question and get expert answers. For instant tips, open the Q&A drawer!</p>
+      <button onclick="openDrawer()" class="btn">Open Q&A Drawer</button>
     </div>
+  </div>
+
+  <!-- Q&A live drawer -->
+  <div id="qa-drawer">
+    <h3>Live Q&A</h3>
+    <input type="text" id="qa-input" placeholder="Type your question...">
+    <button id="qa-submit" class="btn">Submit</button>
+    <div id="qa-log"></div>
   </div>
 
   <script src="script.js"></script>
