@@ -17,9 +17,4 @@
 - Node.js 
 - MongoDB 
 
----
-
-## Contact
-
-For issues or feature requests, please contact the maintainer.
 
