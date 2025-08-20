@@ -18,9 +18,7 @@ app.use('/uploads', express.static('uploads'));
 
 const upload = multer({ dest: 'uploads/' });
 
-// Routes
 
-// Weather (mock; can replace with real API)
 app.get('/api/weather', (req, res) => {
   res.json({
     temp: 28 + Math.floor(Math.random()*6), // random temp for demo
@@ -29,7 +27,6 @@ app.get('/api/weather', (req, res) => {
   });
 });
 
-// Register for workshop
 app.post('/api/workshop', async (req, res) => {
   try {
     const { name, email } = req.body;
@@ -42,7 +39,6 @@ app.post('/api/workshop', async (req, res) => {
   }
 });
 
-// Ask an Expert (store questions)
 app.post('/api/ask-expert', async (req, res) => {
   try {
     const { question } = req.body;
@@ -55,13 +51,11 @@ app.post('/api/ask-expert', async (req, res) => {
   }
 });
 
-// List previous questions (for demo Q&A feed)
 app.get('/api/questions', async (req, res) => {
   const questions = await Question.find().sort({ askedAt: -1 }).limit(10);
   res.json(questions);
 });
 
-// Upload field boundary file (e.g., geojson)
 app.post('/api/upload-field', upload.single('fieldFile'), async (req, res) => {
   if(!req.file) return res.status(400).json({ success: false, message: "File required." });
   await Field.create({
@@ -71,7 +65,7 @@ app.post('/api/upload-field', upload.single('fieldFile'), async (req, res) => {
   res.json({ success: true, filename: req.file.filename, message: "File uploaded!" });
 });
 
-// Start server
 const PORT = 5000;
 app.listen(PORT, () => console.log('Server running on http://localhost:' + PORT));
+
 
