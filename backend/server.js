@@ -6,7 +6,6 @@ const Workshop = require('./models/Workshop');
 const Question = require('./models/Question');
 const Field = require('./models/Field');
 
-// MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/agritech', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -17,7 +16,6 @@ app.use(express.json());
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
-// Multer setup for file uploads
 const upload = multer({ dest: 'uploads/' });
 
 // Routes
@@ -76,3 +74,4 @@ app.post('/api/upload-field', upload.single('fieldFile'), async (req, res) => {
 // Start server
 const PORT = 5000;
 app.listen(PORT, () => console.log('Server running on http://localhost:' + PORT));
+
