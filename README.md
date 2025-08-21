@@ -1,20 +1,6 @@
-# AgriTech Solution 
+# AgriTech Solution (still in progress)
 
+An application of technology in agriculture to enhance productivity, sustainability, and efficiency
 
-
-## Features
-
-- Weather data endpoint
-- Workshop registration storage
-- Expert question submission & retrieval
-- Field boundary file uploads and management
-- CORS enabled for frontend integration
-
----
-
-## Prerequisites
-
-- Node.js 
-- MongoDB 
 
 
